@@ -2,7 +2,9 @@
 <module type="JAVA_MODULE" version="4">
   <component name="CheckStyle-IDEA-Module">
     <option name="configuration">
-      <map />
+      <map>
+        <entry key="active-configuration" value="HTTP_URL:https://gist.github.com/superfashi/b6d24924830f45fae5786cdcee02f049/raw/520f9d293217d731e47bdc4fa0a8b2a529a4e50c/config.xml:CIS 121" />
+      </map>
     </option>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
@@ -12,5 +14,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jsoup-1.14.3" level="project" />
   </component>
 </module>
