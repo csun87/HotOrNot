@@ -1,0 +1,25 @@
+Project Name: Hot or Not
+Project Members: Ria Kulkarni and Christian Sun
+
+Project Description: The point of this project is to be able to see the connections between two artists
+through a graph. It outputs the shortest path using BFS to see the link between two artists and the
+songs that could help them get the connection between the two artists. To do this, we scraped the Billboard
+top charts from the start of the Billboard Top Charts, created a graph between the artists and the songs,
+and performed BFS to find the connections between each of the artist combinations (if there exists one).
+
+Categories: Graph and Graph Algorithms, Information Networks.
+
+Why Project Differs from Proposal: Our project idea was to test how accurate different
+ “Top Songs” charts are. For example, the Billboard Hot 100 songs chart or the Spotify Viral 100.
+ We want to do this by comparing each ranking to how frequently each of those songs are mentioned on
+ Twitter. This way we could have gotten an idea of how much “buzz” each of the songs have and
+ see which one is the most accurate. However, we ran into many roadblocks with this project proposal
+ because we could not get a Twitter API and when we tried to use Google Trends to see what people
+ were talking about, it would limit us at 5 songs, which was inefficient. We decided to keep the theme
+ of Billboard Top Songs but instead of comparing it to what people were talking about, we decided
+ to create a graph to see teh connections between different artists because that did not require any
+ API.
+
+Work Done:
+Writeup/README: Ria
+Code: Christian
