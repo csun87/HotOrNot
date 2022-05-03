@@ -2,7 +2,7 @@ Project Name: Hot or Not
 Project Members: Ria Kulkarni and Christian Sun
 
 Project Description: The goal of this project is to observe the connections between two artists
-through a graph. Specifically, we only care about songs which are culturally relevant/popular by an artist,
+through a graph. Specifically, we only care about songs which are pop culturally relevant/popular by an artist,
 so we deal only with songs that have appeared on the Billboard Hot 100 since the year 2000.
 We define our graph to have artists as the vertices and songs as edges (two artists are
 adjacent if they have produced a song together which has appeared on the Billboard Hot 100). Our program
@@ -10,7 +10,7 @@ finds and outputs the shortest path between two artists using BFS. It also outpu
 along this shortest path between the two artists in the graph.
 
 To obtain the songs and corresponding artists, we web-scraped the Billboard Hot 100 weekly from 01/01/2000 to today's
-date. To obtain culturally relevant artists, we web-scraped the Billboard Artist 100 list weekly from 07/13/2014 to
+date. To obtain pop culturally relevant artists, we web-scraped the Billboard Artist 100 list weekly from 07/13/2014 to
 today's date. We chose 07/13/2014 because this is the latest date that the Billboard Artist 100 historically goes
 back to on billboard.com. While web scraping, we filtered out duplicates and then build the graph between artists
 and songs. Then, we allow the user to query two artists, with which we perform a BFS to find the shortest path
