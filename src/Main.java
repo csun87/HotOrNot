@@ -5,7 +5,8 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the Billboard artist graph!");
-        System.out.println("Please wait while we build the graph... (this may take a little while)");
+        System.out.println("Please wait while we build the graph... " +
+                "(this may take a little while)");
         // Code below needs to be run only if we have not yet generated .txt files to cache results
 //        BillboardScraper scraper = new BillboardScraper();
 //        Set<String> artists = scraper.getArtists();
@@ -61,7 +62,8 @@ public class Main {
             if (bfsResult.isEmpty()) {
                 System.out.println("There is no link between these two artists on the Billboard!");
             } else {
-                System.out.println("There is a path of length " + bfsResult.size() + " between these two artists.");
+                System.out.println("There is a path of length " +
+                        bfsResult.size() + " between these two artists.");
                 for (String x : bfsResult) {
                     System.out.println(x);
                 }

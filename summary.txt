@@ -1,25 +1,42 @@
 Project Name: Hot or Not
 Project Members: Ria Kulkarni and Christian Sun
 
-Project Description: The point of this project is to be able to see the connections between two artists
-through a graph. It outputs the shortest path using BFS to see the link between two artists and the
-songs that could help them get the connection between the two artists. To do this, we scraped the Billboard
-top charts from the start of the Billboard Top Charts, created a graph between the artists and the songs,
-and performed BFS to find the connections between each of the artist combinations (if there exists one).
+Project Description: The goal of this project is to observe the connections between two artists
+through a graph. Specifically, we only care about songs which are culturally relevant/popular by an artist,
+so we deal only with songs that have appeared on the Billboard Hot 100 since the year 2000.
+We define our graph to have artists as the vertices and songs as edges (two artists are
+adjacent if they have produced a song together which has appeared on the Billboard Hot 100). Our program
+finds and outputs the shortest path between two artists using BFS. It also outputs the songs which form the edges
+along this shortest path between the two artists in the graph.
 
-Categories: Graph and Graph Algorithms, Information Networks.
+To obtain the songs and corresponding artists, we web-scraped the Billboard Hot 100 weekly from 01/01/2000 to today's
+date. To obtain culturally relevant artists, we web-scraped the Billboard Artist 100 list weekly from 07/13/2014 to
+today's date. We chose 07/13/2014 because this is the latest date that the Billboard Artist 100 historically goes
+back to on billboard.com. While web scraping, we filtered out duplicates and then build the graph between artists
+and songs. Then, we allow the user to query two artists, with which we perform a BFS to find the shortest path
+between the two artists (or output that a path does not exist).
 
-Why Project Differs from Proposal: Our project idea was to test how accurate different
- “Top Songs” charts are. For example, the Billboard Hot 100 songs chart or the Spotify Viral 100.
- We want to do this by comparing each ranking to how frequently each of those songs are mentioned on
- Twitter. This way we could have gotten an idea of how much “buzz” each of the songs have and
- see which one is the most accurate. However, we ran into many roadblocks with this project proposal
- because we could not get a Twitter API and when we tried to use Google Trends to see what people
- were talking about, it would limit us at 5 songs, which was inefficient. We decided to keep the theme
- of Billboard Top Songs but instead of comparing it to what people were talking about, we decided
- to create a graph to see teh connections between different artists because that did not require any
- API.
+Categories:
+1) Graph and Graph Algorithms: Our project constructs a graph from artists and songs and performs BFS (a graph
+algorithm) on this graph. This is a direct relation to graphs and graph algorithms.
+2) Document Search: We had to web-scrape the Billboard website for historical data. This is a direct application of
+document search as we had to pull song titles and artist names from the HTML documents of billboard.com
 
-Work Done:
+Why Project Differs from Proposal: Our original project idea was to test how accurate different
+“Top Songs” charts are. For example, the Billboard Hot 100 songs chart or the Spotify Viral 100.
+We wanted to do this by comparing each ranking to how frequently each of those songs are mentioned on
+Twitter. This way we could have gotten an idea of how much “buzz” each of the songs have and
+see which one is the most accurate. However, we quickly ran into a roadblock due to Twitter's API request limit,
+which basically stopped us from being able to accomplish this task. Reddit also was not very helpful because we
+could not find a good Reddit thread or subreddit that was relevant to this task.
+We also decided to see if we could try using Google Trends to get an idea of the "buzz" of a song, but this didn't
+work either because Google Trends does not allow web-scraping (all of our requests failed to connect to the website).
+We tried using PyTrends in Python, which is an unofficial API for Google Trends, but the results were very unreliable
+and we were still limited to a very small number of requests which stifled our progress. Thus, we eventually decided
+to pivot our idea and keep the theme of Billboard Top Songs but instead of comparing it to what people were talking
+about, we decided to create a graph to see the connections between different artists because that did not require any
+API.
+
+Work Breakdown:
 Writeup/README: Ria
 Code: Christian
