@@ -25,7 +25,7 @@ public class BillboardScraper {
     public Map<String, String> getAllSongs() {
         Map<String, String> ans = new HashMap<>();
         LocalDate date = LocalDate.now();
-        LocalDate stopDate = LocalDate.of(2014, 7, 13);
+        LocalDate stopDate = LocalDate.of(2000, 1, 1);
         while (date.isAfter(stopDate)) {
             System.out.println("Looking at Hot 100 Chart for: " + date);
             String url = this.URL + date;

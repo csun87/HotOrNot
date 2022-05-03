@@ -1,19 +1,13 @@
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-
+        System.out.println("Welcome to the Billboard artist graph!");
+        System.out.println("Please wait while we build the graph... (this may take a little while)");
         // Code below needs to be run only if we have not yet generated .txt files to cache results
-        BillboardScraper scraper = new BillboardScraper();
-//        List<List<String>> billboardRanking = scraper.getRanking();
-//        for (int i = 0; i < billboardRanking.size(); ++i) {
-//            System.out.println((i + 1) + ": " + billboardRanking.get(i).get(0) + ", by: " +
-//                    billboardRanking.get(i).get(1));
-//        }
+//        BillboardScraper scraper = new BillboardScraper();
 //        Set<String> artists = scraper.getArtists();
 //        Map<String, String> songs = scraper.getAllSongs();
 
@@ -51,18 +45,27 @@ public class Main {
         String[] artistsList = new String[artists.size()];
         artistsList = artists.toArray(artistsList);
         Graph g = new Graph(songs, artistsList);
-        Map<String, List<String[]>> adjList = g.getAdjList();
-        for (Map.Entry<String, List<String[]>> e : adjList.entrySet()) {
-            System.out.println("==========================");
-            System.out.println(e.getKey());
-            for (String[] x : e.getValue()) {
-                System.out.println(x[0] + " || " + x[1]);
+        System.out.println("We are done building the graph!");
+
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Please enter two artists you would like to see the link between");
+            System.out.println("Artists should be given in the form \"Artist 1,Artist 2\"");
+            System.out.println("Type in \"EXIT\" to exit the program.");
+            String input = scanner.nextLine();
+            if (input.equals("EXIT")) {
+                break;
             }
-        }
-        List<String> bfsResult = g.shortestPath("Migos", "JAY-Z");
-        System.out.println(bfsResult.size());
-        for (String x : bfsResult) {
-            System.out.println(x);
+            String[] split = input.split(",");
+            List<String> bfsResult = g.shortestPath(split[0], split[1]);
+            if (bfsResult.isEmpty()) {
+                System.out.println("There is no link between these two artists on the Billboard!");
+            } else {
+                System.out.println("There is a path of length " + bfsResult.size() + " between these two artists.");
+                for (String x : bfsResult) {
+                    System.out.println(x);
+                }
+            }
         }
     }
 }

@@ -39,6 +39,9 @@ public class Graph {
 
     public List<String> shortestPath(String artist1, String artist2) {
         List<String> ans = new ArrayList<>();
+        if (!this.adjList.containsKey(artist1) || !this.adjList.containsKey(artist2)) {
+            return ans;
+        }
         Set<String> discovered = new HashSet<>();
         Queue<List<String>> queue = new ArrayDeque<>();
         queue.offer(Collections.singletonList(artist1));
