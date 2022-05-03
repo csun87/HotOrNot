@@ -100,24 +100,4 @@ public class BillboardScraper {
         }
         return ans;
     }
-
-    public List<List<String>> getRanking() {
-        List<List<String>> ans = new ArrayList<>();
-        Elements songs = this.doc.select(".o-chart-results-list-row-container");
-        for (Element song : songs) {
-            List<String> pair = new ArrayList<>(2);
-            Element title = song.getElementById("title-of-a-story");
-            if (title == null) {
-                continue;
-            }
-            Element artist = title.nextElementSibling();
-            if (artist == null) {
-                continue;
-            }
-            pair.add(title.text());
-            pair.add(artist.text());
-            ans.add(pair);
-        }
-        return ans;
-    }
 }
