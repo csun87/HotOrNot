@@ -18,5 +18,5 @@ the graph is being created.
  
   ![Artist Pre-Run](/Users/ria/Desktop/Screen Shot 2022-05-03 at 3.22.37 PM.png)
  
-If the program runs correctly, the output will look something like thiis:
+If the program runs correctly, the output will look something like this:
  ![Output](/Users/ria/Desktop/Screen Shot 2022-05-03 at 3.46.52 PM.png)
